@@ -1,0 +1,39 @@
+﻿<Window x:Class="Presentation.View.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentation.View"
+        mc:Ignorable="d"
+        Title="RegisterWindow" Height="370" Width="800">
+    <StackPanel Orientation="Vertical">
+        <Label Content="Registration" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Label Content="Email" FontSize="16" Grid.Column="0" Grid.Row="0"/>
+            <TextBox BorderBrush="{Binding Path=EmailBorder}" Text="{Binding Path=Email}" Width="200"  Grid.Column="1" Grid.Row="0" Margin="5"/>
+            <Label Content="Nickname" FontSize="16" Grid.Column="0" Grid.Row="1"/>
+            <TextBox BorderBrush="{Binding Path=NickNameBorder}" Text="{Binding Path=Nickname}" Width="200"  Grid.Column="1" Grid.Row="1" Margin="5"/>
+            <Label Content="Password" FontSize="16" Grid.Column="0" Grid.Row="2"/>
+            <TextBox BorderBrush="{Binding Path=PasswordBorder}" Text="{Binding Path=Password}" Width="200"  Grid.Column="1" Grid.Row="2" Margin="5"/>
+            <Label Visibility="{Binding Path=HostRegVisibility, Mode=TwoWay}" Content="Host Email" FontSize="16" Grid.Column="0" Grid.Row="3"/>
+            <TextBox BorderBrush="{Binding Path=HostBorder}" Visibility="{Binding Path=HostRegVisibility}" Text="{Binding Path=HostEmail}" Width="200"  Grid.Column="1" Grid.Row="3" Margin="5"/>
+            <Button Content="Register" Name="Register" HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Width="70" Height="20" Click="Register_Click"></Button>
+            <Label HorizontalAlignment="Center" Foreground="Red" FontSize="11" Content="{Binding Path=Response}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5"></Label>
+            <Label HorizontalAlignment="Center" Foreground="Green" FontSize="11" Content="{Binding Path=Success}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6"></Label>
+        </Grid>
+        <Button Name="BackBTN" Margin="10" Content="Go back" Width="70" Height="20" HorizontalAlignment="Left" Click="BackBTN_Click"></Button>
+        </StackPanel>
+</Window>

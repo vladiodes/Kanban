@@ -1,0 +1,31 @@
+﻿<Window x:Class="Presentation.View.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentation.View"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="350" Width="400">
+    <StackPanel Orientation="Vertical">
+        <Label Content="Login" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+        <Grid Margin="30" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Label Content="Email" FontSize="16" Grid.Column="0" Grid.Row="0"/>
+            <TextBox BorderBrush="{Binding Path=EmailBorder}" Text="{Binding Path=Email, Mode=TwoWay}" Width="200"  Grid.Column="1" Grid.Row="0" Margin="5"/>
+            <Label Content="Password" FontSize="16" Grid.Column="0" Grid.Row="1"/>
+            <TextBox BorderBrush="{Binding Path=PasswordBorder}" Text="{Binding Path=Password, Mode=TwoWay}" Width="200"  Grid.Column="1" Grid.Row="1" Margin="5"/>
+            <Button Content="Login" Name="LoginBTN" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Width="100" Height="30" Click="LoginBTN_Click"></Button>
+            <Label Content="{Binding Path=Response, Mode=OneWay}" HorizontalAlignment="Center" Foreground="Red" FontSize="11" Name="ResponeLBL" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3"></Label>
+        </Grid>
+        <Button Name="BackBTN" Margin="10" Content="Go back" Width="70" Height="20" HorizontalAlignment="Left" Click="BackBTN_Click"></Button>
+    </StackPanel>
+</Window>

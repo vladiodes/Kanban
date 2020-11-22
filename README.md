@@ -1,2 +1,3 @@
-# Kanban
-A graphical Kanban board
+#ID1: 321305104
+#ID2: 211773361
+#ID3: 315864694
